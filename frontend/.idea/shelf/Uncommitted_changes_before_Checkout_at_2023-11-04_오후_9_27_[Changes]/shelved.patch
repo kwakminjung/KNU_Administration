@@ -1,0 +1,125 @@
+Index: app/src/main/res/layout/fragment_request.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/layout/fragment_request.xml b/app/src/main/res/layout/fragment_request.xml
+--- a/app/src/main/res/layout/fragment_request.xml	
++++ b/app/src/main/res/layout/fragment_request.xml	
+@@ -40,13 +40,17 @@
+         android:id="@+id/request_board_recyclerView"
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content" />
+-
+-    <com.google.android.material.floatingactionbutton.FloatingActionButton
+-        android:layout_width="wrap_content"
+-        android:layout_height="wrap_content"
+-        android:id="@+id/request_write_btn"
+-        android:layout_gravity="end|bottom"
+-        android:src="@drawable/baseline_add_24"
+-        android:layout_margin="16dp">
+-    </com.google.android.material.floatingactionbutton.FloatingActionButton>
++    
++    <FrameLayout
++        android:layout_width="match_parent"
++        android:layout_height="match_parent">
++        <com.google.android.material.floatingactionbutton.FloatingActionButton
++            android:layout_width="wrap_content"
++            android:layout_height="wrap_content"
++            android:id="@+id/request_write_btn"
++            android:layout_gravity="end|bottom"
++            android:src="@drawable/baseline_add_24"
++            android:layout_margin="16dp">
++        </com.google.android.material.floatingactionbutton.FloatingActionButton>
++    </FrameLayout>
+ </LinearLayout>
+\ No newline at end of file
+Index: app/src/main/res/layout/fragment_login.xml
+===================================================================
+diff --git a/app/src/main/res/layout/fragment_login.xml b/app/src/main/res/layout/fragment_login.xml
+--- a/app/src/main/res/layout/fragment_login.xml	
++++ b/app/src/main/res/layout/fragment_login.xml	
+@@ -1,5 +1,5 @@
+ <?xml version="1.0" encoding="utf-8"?>
+-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
++<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+     xmlns:tools="http://schemas.android.com/tools"
+     android:layout_width="match_parent"
+     android:layout_height="match_parent"
+@@ -7,42 +7,43 @@
+     android:background="@color/white">
+ 
+     <LinearLayout
+-        android:padding="40dp"
+         android:layout_width="match_parent"
+         android:layout_height="match_parent"
+         android:layout_gravity="center"
+-        android:orientation="vertical">
+-
++        android:orientation="vertical"
++        android:padding="40dp">
+ 
+         <EditText
+             android:id="@+id/login_id"
+             android:layout_width="match_parent"
+             android:layout_height="50dp"
+-            android:hint="ID"
+-            android:layout_margin="10dp"/>
++            android:layout_margin="10dp"
++            android:hint="ID" />
++
+         <EditText
+             android:id="@+id/login_password"
+             android:layout_width="match_parent"
+             android:layout_height="50dp"
+-            android:hint="PASSWORD"
+-            android:layout_margin="10dp"/>
++            android:layout_margin="10dp"
++            android:hint="PASSWORD" />
+ 
+         <androidx.appcompat.widget.AppCompatButton
+             android:id="@+id/login_btn"
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
++            android:layout_margin="10dp"
+             android:background="#fff0f0"
+-            android:text="로그인"
+-            android:layout_margin="10dp"/>
++            android:text="로그인" />
+ 
+-        <TextView
++        <androidx.appcompat.widget.AppCompatButton
+             android:id="@+id/signin"
+-            android:layout_width="wrap_content"
++            android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+-            android:text="회원 가입"
+-            android:layout_gravity="center"/>
++            android:layout_margin="10dp"
++            android:layout_gravity="center"
++            android:text="회원 가입" />
+ 
+ 
+     </LinearLayout>
+ 
+-</FrameLayout>
+\ No newline at end of file
++</LinearLayout>
+\ No newline at end of file
+Index: app/src/main/java/com/example/knu_administration_android/request/WriteRequestFragment.java
+===================================================================
+diff --git a/app/src/main/java/com/example/knu_administration_android/request/WriteRequestFragment.java b/app/src/main/java/com/example/knu_administration_android/request/WriteRequestFragment.java
+--- a/app/src/main/java/com/example/knu_administration_android/request/WriteRequestFragment.java	
++++ b/app/src/main/java/com/example/knu_administration_android/request/WriteRequestFragment.java	
+@@ -75,4 +75,10 @@
+         else
+             navigationBarView.setVisibility(View.VISIBLE);
+     }
++
++    @Override
++    public void onDestroyView() {
++        super.onDestroyView();
++        hideBottomNavigation(false);
++    }
+ }
+\ No newline at end of file

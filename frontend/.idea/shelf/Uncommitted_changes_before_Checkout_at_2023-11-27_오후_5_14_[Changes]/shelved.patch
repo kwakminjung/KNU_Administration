@@ -1,0 +1,13 @@
+Index: app/src/main/java/com/example/knu_administration_android/alarm/UserAlarmFragment.java
+===================================================================
+diff --git a/app/src/main/java/com/example/knu_administration_android/alarm/UserAlarmFragment.java b/app/src/main/java/com/example/knu_administration_android/alarm/UserAlarmFragment.java
+--- a/app/src/main/java/com/example/knu_administration_android/alarm/UserAlarmFragment.java	
++++ b/app/src/main/java/com/example/knu_administration_android/alarm/UserAlarmFragment.java	
+@@ -87,6 +87,5 @@
+                 Log.e("retrofit", "Failed to connect: " + t.getMessage());
+             }
+         });
+-
+     }
+ }
+\ No newline at end of file

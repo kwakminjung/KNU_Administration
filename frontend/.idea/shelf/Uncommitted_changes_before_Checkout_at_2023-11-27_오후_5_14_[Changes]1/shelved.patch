@@ -1,0 +1,83 @@
+Index: app/src/main/java/com/example/knu_administration_android/network/RetrofitClient.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/com/example/knu_administration_android/network/RetrofitClient.java b/app/src/main/java/com/example/knu_administration_android/network/RetrofitClient.java
+--- a/app/src/main/java/com/example/knu_administration_android/network/RetrofitClient.java	
++++ b/app/src/main/java/com/example/knu_administration_android/network/RetrofitClient.java	
+@@ -30,7 +30,7 @@
+ 
+ 
+ public class RetrofitClient {
+-    private static String BASE_URL = "http://192.168.45.100:8080";
++    private static String BASE_URL = "http://192.168.108.81:8080";
+     private static RetrofitService retrofitAPI;
+     private static RetrofitClient instance = null;
+ 
+Index: app/src/main/java/com/example/knu_administration_android/request/WriteRequestFragment.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/com/example/knu_administration_android/request/WriteRequestFragment.java b/app/src/main/java/com/example/knu_administration_android/request/WriteRequestFragment.java
+--- a/app/src/main/java/com/example/knu_administration_android/request/WriteRequestFragment.java	
++++ b/app/src/main/java/com/example/knu_administration_android/request/WriteRequestFragment.java	
+@@ -69,7 +69,7 @@
+         //카테고리 맨 처음 설정
+         category_elevator.setChecked(true);
+         chooseCategory="승강기";
+-        
++
+         //카테고리 선택
+         categoryRG.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+             @Override
+Index: ../backend/src/main/java/com/javaProject/KNUAdministration/controller/BoardController.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/../backend/src/main/java/com/javaProject/KNUAdministration/controller/BoardController.java b/../backend/src/main/java/com/javaProject/KNUAdministration/controller/BoardController.java
+--- a/../backend/src/main/java/com/javaProject/KNUAdministration/controller/BoardController.java	
++++ b/../backend/src/main/java/com/javaProject/KNUAdministration/controller/BoardController.java	
+@@ -34,14 +34,14 @@
+                 ResponseEntity.status(HttpStatus.OK).body(boardDtoList):
+                 ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
+     }
+-//    //보드 전체조회 오래된 순
+-//    @GetMapping("/api/BoardList/Old")
+-//    public ResponseEntity<List<BoardDto>> showOldBoard(){
+-//        List<BoardDto> boardDtoList = boardService.allSelectOldBoard();
+-//        return (boardDtoList != null)?
+-//                ResponseEntity.status(HttpStatus.OK).body(boardDtoList):
+-//                ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
+-//    }
++    //보드 전체조회 오래된 순
++    @GetMapping("/api/BoardList/Old")
++    public ResponseEntity<List<BoardDto>> showOldBoard(){
++        List<BoardDto> boardDtoList = boardService.allSelectOldBoard();
++        return (boardDtoList != null)?
++                ResponseEntity.status(HttpStatus.OK).body(boardDtoList):
++                ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
++    }
+     //사용자가 쓴 글 조회
+     @GetMapping("/api/BoardList/{accountId}")
+     public ResponseEntity<List<BoardDto>> showMemberBoard(@PathVariable String accountId){
+Index: ../backend/src/main/resources/application.properties
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>ISO-8859-1
+===================================================================
+diff --git a/../backend/src/main/resources/application.properties b/../backend/src/main/resources/application.properties
+--- a/../backend/src/main/resources/application.properties	
++++ b/../backend/src/main/resources/application.properties	
+@@ -1,7 +1,7 @@
+ spring.datasource.driverClassName=org.mariadb.jdbc.Driver
+-spring.datasource.url=jdbc:mariadb://localhost:3306/KnuAdministrationDB
++spring.datasource.url=jdbc:mariadb://localhost:3307/KnuAdministrationDB
+ spring.datasource.username=root
+-spring.datasource.password=ec2532park
++spring.datasource.password=0401
+ spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.MariaDBDialect
+ spring.jpa.hibernate.ddl-auto=update
+ spring.jpa.properties.hibernate.format_sql=true

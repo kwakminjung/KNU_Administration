@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="100dp"
+    android:orientation="vertical"
+    android:layout_marginTop="10dp"
+    android:layout_marginHorizontal="30dp"
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/request_board_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="게시물 제목"
+            android:textSize="20dp" />
+
+        <TextView
+            android:id="@+id/request_board_state"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:text="state"
+            android:textSize="10dp"
+            android:layout_marginBottom="10dp"/>
+
+    </LinearLayout>
+    <View
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+
+
+    <GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:orientation="horizontal"
+        android:layout_gravity="bottom"
+        android:rowCount="1"
+        android:columnCount="3"
+        android:layout_marginBottom="10dp">
+
+        <LinearLayout
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="급해요 "/>
+            <TextView
+                android:id="@+id/request_board_haste"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=" 0"
+                android:textSize="15dp"
+                android:layout_weight="1"/>
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/request_board_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="20dp"
+            android:text="yyyy-mm-dd"
+            android:layout_gravity="center_horizontal"
+            android:textSize="15dp"
+            android:layout_weight="1"/>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="조회수 "/>
+            <TextView
+                android:id="@+id/request_board_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="1126"
+                android:textSize="15dp"
+                android:textColor="#454545"
+                android:layout_weight="1"/>
+
+        </LinearLayout>
+
+    </GridLayout>
+
+
+</LinearLayout>

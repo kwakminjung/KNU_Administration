@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/notificationItem"
+        android:icon="@drawable/notification_icon"
+        android:title="공지" />
+
+    <item
+        android:id="@+id/requestItem"
+        android:icon="@drawable/request_icon"
+        android:title="민원" />
+
+    <item
+        android:id="@+id/settingItem"
+        android:icon="@drawable/setting_icon"
+        android:title="MY" />
+
+</menu>

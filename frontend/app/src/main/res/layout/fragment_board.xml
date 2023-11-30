@@ -1,0 +1,353 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".request.BoardFragment"
+    android:orientation="vertical"
+    android:padding="20dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal">
+
+        <ImageButton
+            android:id="@+id/back_btn"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_gravity="left"
+            android:background="@drawable/back_btn_24"/>
+        <View
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="1"/>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/change_btn"
+            android:background="#BCB7B7"
+            android:layout_width="80dp"
+            android:layout_height="40dp"
+            android:layout_marginRight="5dp"
+            android:text="수정"/>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/delete_btn"
+            android:background="#BA4747"
+            android:layout_width="80dp"
+            android:layout_height="40dp"
+            android:text="삭제"/>
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="20dp"
+                android:orientation="vertical">
+                <TextView
+                    android:id="@+id/board_title_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Title"
+                    android:textColor="#000000"
+                    android:textSize="30dp"/>
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="10dp">
+                    <TextView
+                        android:id="@+id/writer_id_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="left"
+                        android:text="202*****6"/>
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:layout_weight="1" />
+                    <TextView
+                        android:id="@+id/board_date_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="YY/MM/DD HH:mm"/>
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:layout_weight="1" />
+                    <TextView
+                        android:id="@+id/board_view_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="right"
+                        android:textColor="#595959"
+                        android:text="조회 10"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_weight="1" />
+                <RadioGroup
+                    android:id="@+id/category_radioGroup"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_gravity="center"
+                    android:enabled="false">
+
+                    <RadioButton
+                        android:checked="true"
+                        android:id="@+id/category_elevator"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/selector_radio_button"
+                        android:textColor="@drawable/selector_radio_text"
+                        android:button="@null"
+                        android:textSize="10dp"
+                        android:textAlignment="center"
+                        android:paddingLeft="7dp"
+                        android:paddingRight="7dp"
+                        android:text="승강기"
+                        android:layout_weight="1"
+                        android:enabled="false"/>
+
+                    <RadioButton
+                        android:id="@+id/category_heating_and_cooling"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/selector_radio_button"
+                        android:textColor="@drawable/selector_radio_text"
+                        android:button="@null"
+                        android:textSize="10dp"
+                        android:textAlignment="center"
+                        android:paddingLeft="7dp"
+                        android:paddingRight="7dp"
+                        android:text="냉난방"
+                        android:layout_weight="1"
+                        android:enabled="false"/>
+
+                    <RadioButton
+                        android:id="@+id/category_dangerous_goods"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/selector_radio_button"
+                        android:textColor="@drawable/selector_radio_text"
+                        android:button="@null"
+                        android:textSize="10dp"
+                        android:textAlignment="center"
+                        android:paddingLeft="7dp"
+                        android:paddingRight="7dp"
+                        android:text="위험물"
+                        android:layout_weight="1"
+                        android:enabled="false"/>
+                    <RadioButton
+                        android:id="@+id/category_laboratory"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/selector_radio_button"
+                        android:textColor="@drawable/selector_radio_text"
+                        android:button="@null"
+                        android:textSize="10dp"
+                        android:textAlignment="center"
+                        android:paddingLeft="7dp"
+                        android:paddingRight="7dp"
+                        android:text="연구실"
+                        android:layout_weight="1"
+                        android:enabled="false"/>
+                    <RadioButton
+                        android:id="@+id/category_classroom"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/selector_radio_button"
+                        android:textColor="@drawable/selector_radio_text"
+                        android:button="@null"
+                        android:textSize="10dp"
+                        android:textAlignment="center"
+                        android:paddingLeft="7dp"
+                        android:paddingRight="7dp"
+                        android:text="강의실"
+                        android:layout_weight="1"
+                        android:enabled="false"/>
+                    <RadioButton
+                        android:id="@+id/category_dormitory"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/selector_radio_button"
+                        android:textColor="@drawable/selector_radio_text"
+                        android:button="@null"
+                        android:textSize="10dp"
+                        android:textAlignment="center"
+                        android:paddingLeft="7dp"
+                        android:paddingRight="7dp"
+                        android:text="기숙사"
+                        android:layout_weight="1"
+                        android:enabled="false"/>
+                    <RadioButton
+                        android:id="@+id/category_etc"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/selector_radio_button"
+                        android:textColor="@drawable/selector_radio_text"
+                        android:button="@null"
+                        android:textSize="10dp"
+                        android:textAlignment="center"
+                        android:paddingLeft="8dp"
+                        android:paddingRight="8dp"
+                        android:text="기타"
+                        android:layout_weight="1"
+                        android:enabled="false"/>
+                </RadioGroup>
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_weight="1" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="50dp">
+                <TextView
+                    android:id="@+id/board_content_tv"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="18dp"
+                    android:textColor="#000000"
+                    android:text="Post"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:layout_marginHorizontal="30dp"
+                android:layout_gravity="center">
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginHorizontal="5dp">
+                    <ImageView
+                        android:id="@+id/step1_iv"
+                        android:layout_width="55dp"
+                        android:layout_height="55dp"
+                        android:background="#ffffff"
+                        android:src="@drawable/board_state_step1_off_64"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="접수"
+                        android:textSize="15dp"
+                        android:layout_gravity="center"/>
+                </LinearLayout>
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/next_step_32"
+                    android:layout_gravity="center_vertical"/>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginHorizontal="5dp">
+                    <ImageView
+                        android:id="@+id/step2_iv"
+                        android:layout_width="55dp"
+                        android:layout_height="55dp"
+                        android:background="#ffffff"
+                        android:src="@drawable/board_state_step2_off_64"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="처리 중"
+                        android:textSize="15dp"
+                        android:layout_gravity="center"/>
+                </LinearLayout>
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/next_step_32"
+                    android:layout_gravity="center_vertical"/>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginHorizontal="5dp">
+                    <ImageView
+                        android:id="@+id/step3_iv"
+                        android:layout_width="55dp"
+                        android:layout_height="55dp"
+                        android:background="#ffffff"
+                        android:src="@drawable/board_state_step3_off_64"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="처리 완료"
+                        android:textSize="15dp"
+                        android:layout_gravity="center"/>
+                </LinearLayout>
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="20dp">
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_weight="1" />
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/request_board_haste_btn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="급해요"
+                    android:layout_marginRight="20dp"
+                    android:background="@color/green"
+                    android:gravity="center"/>
+                <TextView
+                    android:id="@+id/haste_count_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="11"
+                    android:textSize="20dp"
+                    android:gravity="center"/>
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_weight="1" />
+
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>

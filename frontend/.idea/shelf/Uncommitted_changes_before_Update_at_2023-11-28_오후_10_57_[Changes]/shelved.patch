@@ -1,0 +1,20 @@
+Index: ../backend/src/main/resources/application.properties
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>spring.datasource.driverClassName=org.mariadb.jdbc.Driver\r\nspring.datasource.url=jdbc:mariadb://localhost:3306/KnuAdministrationDB\r\nspring.datasource.username=root\r\nspring.datasource.password=ec2532park\r\nspring.jpa.properties.hibernate.dialect=org.hibernate.dialect.MariaDBDialect\r\nspring.jpa.hibernate.ddl-auto=update\r\nspring.jpa.properties.hibernate.format_sql=true\r\nspring.jpa.properties.hibernate.show_sql=true\r\nlogging.level.org.hibernate=TRACE
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>ISO-8859-1
+===================================================================
+diff --git a/../backend/src/main/resources/application.properties b/../backend/src/main/resources/application.properties
+--- a/../backend/src/main/resources/application.properties	(revision 83f100a92840c26333319116e748773d0535e170)
++++ b/../backend/src/main/resources/application.properties	(date 1701152626093)
+@@ -1,7 +1,7 @@
+ spring.datasource.driverClassName=org.mariadb.jdbc.Driver
+-spring.datasource.url=jdbc:mariadb://localhost:3306/KnuAdministrationDB
++spring.datasource.url=jdbc:mariadb://localhost:3307/KnuAdministrationDB
+ spring.datasource.username=root
+-spring.datasource.password=ec2532park
++spring.datasource.password=0401
+ spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.MariaDBDialect
+ spring.jpa.hibernate.ddl-auto=update
+ spring.jpa.properties.hibernate.format_sql=true
